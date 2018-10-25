@@ -1,0 +1,6 @@
+[submodule ".build/evm-semantics"]
+	path = .build/evm-semantics
+	url = git@github.com:kframework/evm-semantics.git
+[submodule ".build/pandoc-tangle"]
+	path = .build/pandoc-tangle
+	url = git@github.com:ehildenb/pandoc-tangle.git
