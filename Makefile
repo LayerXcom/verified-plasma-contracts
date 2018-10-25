@@ -60,17 +60,17 @@ plasma_mvp_files:=operator-spec.k \
 
 proof_tests:=plasma-mvp
 
-plasma-mvp: $(patsubst %, $(specs_dir)/plasma/%, $(plasma_mvp_files)) $(specs_dir)/lemmas.k
+plasma-mvp: $(patsubst %, $(specs_dir)/plasma-mvp/%, $(plasma_mvp_files)) $(specs_dir)/lemmas.k
 
 #plasma
 plasma_mvp_tmpls:=plasma-mvp/module-tmpl.k plasma-mvp/spec-tmpl.k
 
-$(specs_dir)/plasma-mvp/%-spec.k: $(plasma_tmpls) plasma-mvp/plasma-mvp-spec.ini
+$(specs_dir)/plasma-mvp/%-spec.k: $(plasma_mvp_tmpls) plasma-mvp/plasma-mvp-spec.ini
 	@echo >&2 "==  gen-spec: $@"
 	mkdir -p $(dir $@)
 	python3 resources/gen-spec.py $^ $* $* > $@
-	cp plasma/abstract-semantics.k $(dir $@)
-	cp plasma/verification.k $(dir $@)
+	cp plasma-mvp/abstract-semantics.k $(dir $@)
+	cp plasma-mvp/verification.k $(dir $@)
 
 # Testing
 # -------
