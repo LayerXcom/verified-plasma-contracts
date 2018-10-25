@@ -45,7 +45,7 @@ $(specs_dir)/lemmas.k: resources/lemmas.md $(TANGLER)
 # Spec Files
 # ----------
 
-plasma_files:=operator-spec.k \
+plasma_mvp_files:=operator-spec.k \
               currentChildBlock-spec.k \
               currentDepositBlock-spec.k \
               currentFeeExit-spec.k \
@@ -58,35 +58,12 @@ plasma_files:=operator-spec.k \
               getDepositBlock-spec.k
 
 
-proof_tests:=plasma
+proof_tests:=plasma-mvp
 
-# FIXME: restore the casper specs
-#proof_tests += casper
-
-split-proof-tests: $(proof_tests)
-
-bihu: $(patsubst %, $(specs_dir)/bihu/%, $(bihu_collectToken_file)) $(patsubst %, $(specs_dir)/bihu/%, $(bihu_forwardToHotWallet_files)) $(specs_dir)/lemmas.k
-
-vyper-erc20: $(patsubst %, $(specs_dir)/vyper-erc20/%, $(erc20_files)) $(specs_dir)/lemmas.k
-
-zeppelin-erc20: $(patsubst %, $(specs_dir)/zeppelin-erc20/%, $(zeppelin_erc20_files)) $(specs_dir)/lemmas.k
-
-hkg-erc20: $(patsubst %, $(specs_dir)/hkg-erc20/%, $(erc20_files)) $(specs_dir)/lemmas.k
-
-hobby-erc20: $(patsubst %, $(specs_dir)/hobby-erc20/%, $(hobby_erc20_files)) $(specs_dir)/lemmas.k
-
-sum-to-n: $(specs_dir)/examples/sum-to-n-spec.k $(specs_dir)/lemmas.k
-
-ds-token-erc20: $(patsubst %, $(specs_dir)/ds-token-erc20/%, $(ds_token_erc20_files)) $(specs_dir)/lemmas.k
-
-casper: $(patsubst %, $(specs_dir)/casper/%, $(casper_files)) $(specs_dir)/lemmas.k
-
-gnosis: $(patsubst %, $(specs_dir)/gnosis/%, $(gnosis_files)) $(specs_dir)/lemmas.k
-
-plasma: $(patsubst %, $(specs_dir)/plasma/%, $(plasma_files)) $(specs_dir)/lemmas.k
+plasma-mvp: $(patsubst %, $(specs_dir)/plasma/%, $(plasma_mvp_files)) $(specs_dir)/lemmas.k
 
 #plasma
-plasma_tmpls:=plasma-mvp/module-tmpl.k plasma-mvp/spec-tmpl.k
+plasma_mvp_tmpls:=plasma-mvp/module-tmpl.k plasma-mvp/spec-tmpl.k
 
 $(specs_dir)/plasma-mvp/%-spec.k: $(plasma_tmpls) plasma-mvp/plasma-mvp-spec.ini
 	@echo >&2 "==  gen-spec: $@"
