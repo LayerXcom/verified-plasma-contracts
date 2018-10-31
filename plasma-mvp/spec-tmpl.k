@@ -65,7 +65,7 @@
       </evm>
 
       <network>
-        <activeAccounts> SetItem(ACCT_ID) _:Set </activeAccounts>
+        <activeAccounts> SetItem(ACCT_ID) ACCTS:Set </activeAccounts>
 
         <accounts>
           <account>
@@ -75,7 +75,7 @@
             <storage>
               {STORAGE}
             </storage>
-            <nonce> _ </nonce>
+            <nonce> ACCT_NONCE </nonce>
           </account>
        // ... // TODO: fix
         </accounts>
@@ -90,4 +90,5 @@
      andBool 0 <=Int ORIGIN_ID  andBool ORIGIN_ID  <Int (2 ^Int 160)
      andBool 0 <=Int CALL_DEPTH andBool CALL_DEPTH <Int 1024
      andBool 0 <=Int TIME_STAMP andBool TIME_STAMP <Int (2 ^Int 256)
+     andBool 0 <=Int ACCT_NONCE andBool ACCT_NONCE <Int (2 ^Int 64)
      {REQUIRES}
