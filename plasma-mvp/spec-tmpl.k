@@ -18,7 +18,7 @@
           <program> #asMapOpCodes(#dasmOpCodes(#parseByteStack({CODE}), BYZANTIUM)) </program>
           <programBytes> #parseByteStack({CODE}) </programBytes>
 
-          <id> ACCT_ID </id> // contract owner
+          <id> ACCT_ID:Int </id> // contract owner
           <caller> CALLER_ID </caller> // who called this contract; in the begining, origin // msg.sender
 
           <callData> {CALLDATA} </callData>
