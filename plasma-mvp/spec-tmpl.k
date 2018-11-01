@@ -77,7 +77,13 @@
             </storage>
             <nonce> ACCT_NONCE </nonce>
           </account>
-       // ... // TODO: fix
+            (.Bag => 
+              <account>
+                <acctID> {NEWACCOUNTADDR} </acctID>
+                ...
+              </account>              
+            )
+            ...
         </accounts>
 
         <txOrder> _ </txOrder>
