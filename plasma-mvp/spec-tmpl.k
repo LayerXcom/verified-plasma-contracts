@@ -65,7 +65,7 @@
       </evm>
 
       <network>
-        <activeAccounts> SetItem(ACCT_ID) SetItem(PRIORITY_QUEUE_ID) _:Set </activeAccounts>
+        <activeAccounts> SetItem(ACCT_ID) SetItem(PRIORITY_QUEUE_ID) ACCTS:Set </activeAccounts>
 
         <accounts>
           <account>
