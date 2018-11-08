@@ -65,8 +65,8 @@
       </evm>
 
       <network>
-        <activeAccounts> SetItem(ACCT_ID) ACCTS:Set </activeAccounts>
-
+        <activeAccounts> {ACTIVEACCOUNTS} </activeAccounts>
+      
         <accounts>
           <account>
             <acctID> ACCT_ID </acctID>
