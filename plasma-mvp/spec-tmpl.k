@@ -19,7 +19,7 @@
           <programBytes> #parseByteStack({CODE}) </programBytes>
 
           <id> ACCT_ID:Int </id> // contract owner
-          <caller> CALLER_ID </caller> // who called this contract; in the begining, origin // msg.sender
+          <caller> CALLER_ID:Int </caller> // who called this contract; in the begining, origin // msg.sender
 
           <callData> {CALLDATA} </callData>
 
@@ -42,7 +42,7 @@
         </substate>
 
         <gasPrice> _ </gasPrice>
-        <origin> ORIGIN_ID </origin> // who fires tx
+        <origin> ORIGIN_ID:Int </origin> // who fires tx
 
         <previousHash> _ </previousHash>
         <ommersHash> _ </ommersHash>
