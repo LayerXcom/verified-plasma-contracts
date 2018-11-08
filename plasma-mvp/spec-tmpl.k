@@ -78,7 +78,7 @@
             <nonce> ACCT_NONCE </nonce>
           </account>
           <account>
-            <acctID> PRIORITY_QUEUE_ID </acctID>
+            <acctID> PRIORITY_QUEUE_ID:Int </acctID>
             <balance> _ </balance>
             <code> #parseByteStack({PRIORITY_QUEUE_CODE}) </code>
             <storage>
