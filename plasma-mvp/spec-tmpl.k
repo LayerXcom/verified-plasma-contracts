@@ -65,7 +65,7 @@
       </evm>
 
       <network>
-        <activeAccounts> SetItem(ACCT_ID) ACCTS:Set </activeAccounts>
+        <activeAccounts> SetItem(ACCT_ID) SetItem(PRIORITY_QUEUE_ID) ACCTS:Set </activeAccounts>
 
         <accounts>
           <account>
@@ -77,7 +77,15 @@
             </storage>
             <nonce> ACCT_NONCE </nonce>
           </account>
-       // ... // TODO: fix
+          <account>
+            <acctID> PRIORITY_QUEUE_ID:Int </acctID>
+            <balance> _ </balance>
+            <code> #parseByteStack({PRIORITY_QUEUE_CODE}) </code>
+            <storage>
+              {PRIORITY_QUEUE_STORAGE}
+            </storage>
+            <nonce> _ </nonce>
+          </account>
         </accounts>
 
         <txOrder> _ </txOrder>
@@ -91,4 +99,5 @@
      andBool 0 <=Int CALL_DEPTH andBool CALL_DEPTH <Int 1024
      andBool 0 <=Int TIME_STAMP andBool TIME_STAMP <Int (2 ^Int 256)
      andBool 0 <=Int ACCT_NONCE andBool ACCT_NONCE <Int (2 ^Int 64)
+     andBool 0 <=Int PRIORITY_QUEUE_ID andBool PRIORITY_QUEUE_ID <Int (2 ^Int 160)
      {REQUIRES}

@@ -60,7 +60,8 @@ plasma_mvp_files:=operator-spec.k \
               hasToken-false-spec.k \
               getChildChain-spec.k \
               getDepositBlock-spec.k \
-              getExit-spec.k
+              getExit-spec.k \
+              getNextExit-spec.k
 
 
 proof_tests:=plasma-mvp
