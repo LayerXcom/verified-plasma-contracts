@@ -1,4 +1,4 @@
-# [WIP]Formally Verified Plasma Contracts
+# Formally Verified Plasma Contracts
 Formal verification for OmiseGo's [plasma-contracts](https://github.com/omisego/plasma-contracts).
 
 This is experimental project and don't guarantee anything.
