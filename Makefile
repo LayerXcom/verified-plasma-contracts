@@ -56,6 +56,8 @@ plasma_mvp_files:=operator-spec.k \
               submitBlock-failure-spec.k \
               deposit-success-spec.k \
               deposit-failure-spec.k \
+			  startFeeExit-success-spec.k \
+			  startFeeExit-failure-spec.k \
               hasToken-true-spec.k \
               hasToken-false-spec.k \
               getChildChain-spec.k \
