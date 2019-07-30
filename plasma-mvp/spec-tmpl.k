@@ -19,7 +19,7 @@
           <programBytes> #parseByteStack({CODE}) </programBytes>
 
           <id> ACCT_ID:Int </id> // contract owner
-          <caller> CALLER_ID </caller> // who called this contract; in the begining, origin // msg.sender
+          <caller> CALLER_ID:Int </caller> // who called this contract; in the begining, origin // msg.sender
 
           <callData> {CALLDATA} </callData>
 
@@ -42,7 +42,7 @@
         </substate>
 
         <gasPrice> _ </gasPrice>
-        <origin> ORIGIN_ID </origin> // who fires tx
+        <origin> ORIGIN_ID:Int </origin> // who fires tx
 
         <previousHash> _ </previousHash>
         <ommersHash> _ </ommersHash>
@@ -65,8 +65,8 @@
       </evm>
 
       <network>
-        <activeAccounts> SetItem(ACCT_ID) ACCTS:Set </activeAccounts>
-
+        <activeAccounts> {ACTIVEACCOUNTS} </activeAccounts>
+      
         <accounts>
           <account>
             <acctID> ACCT_ID </acctID>
@@ -77,7 +77,13 @@
             </storage>
             <nonce> ACCT_NONCE </nonce>
           </account>
-       // ... // TODO: fix
+            (.Bag => 
+              <account>
+                <acctID> {NEWACCOUNTADDR} </acctID>
+                ...
+              </account>              
+            )
+            ...
         </accounts>
 
         <txOrder> _ </txOrder>
